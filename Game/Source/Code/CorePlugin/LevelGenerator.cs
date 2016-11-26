@@ -51,9 +51,9 @@ namespace Game
 				this.spawnTimer += MathF.Rnd.NextFloat(0.8f, 1.25f);
 				this.spawnIndex++;
 
-				if ((this.spawnIndex % 12) == 0)
+				if ((this.spawnIndex % 10) == 0)
 					this.SpawnClock();
-				else if ((this.spawnIndex % 12) == 6)
+				else if ((this.spawnIndex % 10) == 6)
 					this.SpawnMemory();
 				else
 					this.SpawnObstacle();

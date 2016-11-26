@@ -269,6 +269,12 @@
                 <contentPath dataType="String">Data\Graphics\Memories\Oma3.Texture.res</contentPath>
               </item>
               <item dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Texture]]">
+                <contentPath dataType="String">Data\Graphics\Memories\Oma3_1.Texture.res</contentPath>
+              </item>
+              <item dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Texture]]">
+                <contentPath dataType="String">Data\Graphics\Memories\Oma3_2.Texture.res</contentPath>
+              </item>
+              <item dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Texture]]">
                 <contentPath dataType="String">Data\Graphics\Memories\Oma4.Texture.res</contentPath>
               </item>
               <item dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Texture]]">
