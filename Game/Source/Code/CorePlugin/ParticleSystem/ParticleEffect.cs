@@ -18,6 +18,7 @@ namespace ParticleSystem
 		private Vector2               particleSize  = new Vector2(16, 16);
 		private Vector3               constantForce = Vector3.Zero;
 		private float                 linearDrag    = 0.3f;
+		private float                 brightnessByDepth = 0.0f;
 		private float                 angularDrag   = 0.3f;
 		private float                 fadeInAt      = 0.0f;
 		private float                 fadeOutAt     = 0.75f;
@@ -76,6 +77,11 @@ namespace ParticleSystem
 		{
 			get { return this.warmStartingTime; }
 			set { this.warmStartingTime = value; }
+		}
+		public float BrightnessByDepth
+		{
+			get { return this.brightnessByDepth; }
+			set { this.brightnessByDepth = value; }
 		}
 		public List<ParticleEmitter> Emitters
 		{
@@ -213,6 +219,14 @@ namespace ParticleSystem
 				float particleScale = objScale;
 
 				device.PreprocessCoords(ref particlePos, ref particleScale);
+
+				if (this.brightnessByDepth > 0.0f)
+				{
+					float brightness = MathF.Pow(MathF.Clamp(500.0f / particlePos.Z, 0.0f, 1.0f), this.brightnessByDepth);
+					color.R = (byte)(color.R * brightness);
+					color.G = (byte)(color.G * brightness);
+					color.B = (byte)(color.B * brightness);
+				}
 
 				Vector2 xDot, yDot;
 				MathF.GetTransformDotVec(particleAngle, particleScale, out xDot, out yDot);

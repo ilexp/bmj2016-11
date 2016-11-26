@@ -29,7 +29,7 @@
         <item dataType="Struct" type="Duality.Components.Physics.RigidBody" id="4070560110">
           <active dataType="Bool">true</active>
           <angularDamp dataType="Float">0.3</angularDamp>
-          <angularVel dataType="Float">0.0111578275</angularVel>
+          <angularVel dataType="Float">-0.00137598813</angularVel>
           <bodyType dataType="Enum" type="Duality.Components.Physics.BodyType" name="Dynamic" value="1" />
           <colCat dataType="Enum" type="Duality.Components.Physics.CollisionCategory" name="Cat1" value="1" />
           <colFilter />
@@ -57,15 +57,15 @@
               </item>
             </_items>
             <_size dataType="Int">1</_size>
-            <_version dataType="Int">2</_version>
+            <_version dataType="Int">3</_version>
           </shapes>
         </item>
         <item dataType="Struct" type="Duality.Components.Renderers.SpriteRenderer" id="2649950154">
           <active dataType="Bool">true</active>
           <colorTint dataType="Struct" type="Duality.Drawing.ColorRgba">
             <A dataType="Byte">255</A>
-            <B dataType="Byte">0</B>
-            <G dataType="Byte">0</G>
+            <B dataType="Byte">255</B>
+            <G dataType="Byte">255</G>
             <R dataType="Byte">255</R>
           </colorTint>
           <customMat />
@@ -74,14 +74,14 @@
           <offset dataType="Int">0</offset>
           <pixelGrid dataType="Bool">false</pixelGrid>
           <rect dataType="Struct" type="Duality.Rect">
-            <H dataType="Float">143</H>
-            <W dataType="Float">143</W>
-            <X dataType="Float">-71.5</X>
-            <Y dataType="Float">-71.5</Y>
+            <H dataType="Float">118</H>
+            <W dataType="Float">168</W>
+            <X dataType="Float">-84</X>
+            <Y dataType="Float">-59</Y>
           </rect>
           <rectMode dataType="Enum" type="Duality.Components.Renderers.SpriteRenderer+UVMode" name="Stretch" value="0" />
           <sharedMat dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Material]]">
-            <contentPath dataType="String">Data\Graphics\Ghost_clock.Material.res</contentPath>
+            <contentPath dataType="String">Data\Graphics\ghost_photo.Material.res</contentPath>
           </sharedMat>
           <visibilityGroup dataType="Enum" type="Duality.Drawing.VisibilityFlag" name="Group0" value="1" />
         </item>
@@ -105,7 +105,6 @@
         <item dataType="Struct" type="Game.Memory" id="2488121705">
           <active dataType="Bool">true</active>
           <gameobj dataType="ObjectRef">1007783586</gameobj>
-          <image dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Texture]]" />
         </item>
       </_items>
       <_size dataType="Int">6</_size>
