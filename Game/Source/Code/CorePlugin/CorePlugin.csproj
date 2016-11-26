@@ -57,8 +57,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clock.cs" />
     <Compile Include="CorePlugin.cs" />
-    <Compile Include="YourCustomComponentType.cs" />
+    <Compile Include="CollectibleItem.cs" />
+    <Compile Include="LevelGenerator.cs" />
+    <Compile Include="ErraticMovement.cs" />
+    <Compile Include="LevelObjectController.cs" />
+    <Compile Include="HeadUpDisplay.cs" />
+    <Compile Include="PlayerController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
