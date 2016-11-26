@@ -43,9 +43,9 @@
                 <item dataType="Struct" type="Duality.Components.Camera+Pass" id="3150235204">
                   <clearColor dataType="Struct" type="Duality.Drawing.ColorRgba">
                     <A dataType="Byte">255</A>
-                    <B dataType="Byte">54</B>
-                    <G dataType="Byte">43</G>
-                    <R dataType="Byte">45</R>
+                    <B dataType="Byte">27</B>
+                    <G dataType="Byte">25</G>
+                    <R dataType="Byte">24</R>
                   </clearColor>
                   <clearDepth dataType="Float">1</clearDepth>
                   <clearFlags dataType="Enum" type="Duality.Drawing.ClearFlag" name="All" value="3" />
@@ -178,12 +178,18 @@
             <gameOver dataType="Bool">false</gameOver>
             <gameWon dataType="Bool">false</gameWon>
             <health dataType="Float">80</health>
+            <loseScene dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Scene]]">
+              <contentPath dataType="String">Data\LoseScene.Scene.res</contentPath>
+            </loseScene>
             <memoryCount dataType="Int">0</memoryCount>
             <music dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Sound]]">
               <contentPath dataType="String">Data\Audio\Background.Sound.res</contentPath>
             </music>
             <musicInstance />
             <verticalSpeed dataType="Float">3</verticalSpeed>
+            <winScene dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Scene]]">
+              <contentPath dataType="String">Data\WinScene.Scene.res</contentPath>
+            </winScene>
           </item>
           <item dataType="Struct" type="Duality.Components.Renderers.SpriteRenderer" id="287481461">
             <active dataType="Bool">true</active>
@@ -285,7 +291,10 @@
             </memoryObject>
             <obstacleObjects dataType="Array" type="Duality.ContentRef`1[[Duality.Resources.Prefab]][]" id="4124045920">
               <item dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Prefab]]">
-                <contentPath dataType="String">Data\LevelObjects\Obstacle.Prefab.res</contentPath>
+                <contentPath dataType="String">Data\LevelObjects\TableObstacle.Prefab.res</contentPath>
+              </item>
+              <item dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Prefab]]">
+                <contentPath dataType="String">Data\LevelObjects\ChestObstacle.Prefab.res</contentPath>
               </item>
             </obstacleObjects>
             <spawnIndex dataType="Int">0</spawnIndex>

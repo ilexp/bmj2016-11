@@ -90,7 +90,8 @@ namespace Game
 				0.0f);
 
 			Prefab spawnedPrefab = MathF.Rnd.OneOf(this.obstacleObjects).Res;
-			GameObject obj = spawnedPrefab.Instantiate(pos);
+			GameObject obj = spawnedPrefab.Instantiate();
+			obj.Transform.Pos = pos;
 			this.GameObj.ParentScene.AddObject(obj);
 		}
 	}

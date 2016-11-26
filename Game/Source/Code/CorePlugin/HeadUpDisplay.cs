@@ -49,6 +49,8 @@ namespace Game
 
 		void ICmpUpdatable.OnUpdate()
 		{
+			if (this.player == null) return;
+
 			this.fadeValue += (this.targetFade - this.fadeValue) * 0.01f * Time.TimeMult;
 			this.memoryFade -= 0.25f * Time.SPFMult * Time.TimeMult;
 
@@ -56,11 +58,15 @@ namespace Game
 			{
 				this.targetFade = 0.0f;
 				this.targetFadeColor = ColorRgba.Black;
+				if (this.fadeValue <= 0.001f)
+					Scene.SwitchTo(this.player.LoseScene);
 			}
 			else if (this.player.GameWon)
 			{
 				this.targetFade = 0.0f;
 				this.targetFadeColor = ColorRgba.White;
+				if (this.fadeValue <= 0.001f)
+					Scene.SwitchTo(this.player.WinScene);
 			}
 		}
 		bool ICmpRenderer.IsVisible(IDrawDevice device)

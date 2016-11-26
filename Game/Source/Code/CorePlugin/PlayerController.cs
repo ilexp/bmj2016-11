@@ -13,6 +13,8 @@ namespace Game
 	[RequiredComponent(typeof(RigidBody))]
 	public class PlayerController : Component, ICmpUpdatable
 	{
+		private ContentRef<Scene> winScene = null;
+		private ContentRef<Scene> loseScene = null;
 		private ContentRef<Sound> music = null;
 		private SoundInstance musicInstance = null;
 		private bool gameWon = false;
@@ -24,6 +26,16 @@ namespace Game
 		private float backwardSpeed = 8.0f;
 		private float verticalSpeed = 6.0f;
 
+		public ContentRef<Scene> WinScene
+		{
+			get { return this.winScene; }
+			set { this.winScene = value; }
+		}
+		public ContentRef<Scene> LoseScene
+		{
+			get { return this.loseScene; }
+			set { this.loseScene = value; }
+		}
 		public ContentRef<Sound> Music
 		{
 			get { return this.music; }
