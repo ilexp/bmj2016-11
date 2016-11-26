@@ -86,7 +86,7 @@ namespace Game
 				this.gameOver = true;
 
 			LevelGenerator gen = this.GameObj.ParentScene.FindComponent<LevelGenerator>();
-			if (this.memoryCount >= gen.MemoryImages.Length)
+			if (this.memoryCount > gen.MemoryImages.Length)
 				this.gameWon = true;
 		}
 	}

@@ -17,7 +17,10 @@ namespace Game
 			PlayerController player = this.GameObj.ParentScene.FindComponent<PlayerController>();
 			HeadUpDisplay hud = this.GameObj.ParentScene.FindComponent<HeadUpDisplay>();
 
-			hud.FlashMemory(gen.MemoryImages[MathF.Clamp(player.MemoryCount, 0, gen.MemoryImages.Length - 1)]);
+			if (player.MemoryCount < gen.MemoryImages.Length)
+			{
+				hud.FlashMemory(gen.MemoryImages[player.MemoryCount]);
+			}
 			player.MemoryCount++;
 		}
 	}

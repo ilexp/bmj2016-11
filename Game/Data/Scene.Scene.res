@@ -258,9 +258,11 @@
             <memoryObject dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Prefab]]">
               <contentPath dataType="String">Data\LevelObjects\MemoryItem.Prefab.res</contentPath>
             </memoryObject>
-            <obstacleObject dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Prefab]]">
-              <contentPath dataType="String">Data\LevelObjects\Obstacle.Prefab.res</contentPath>
-            </obstacleObject>
+            <obstacleObjects dataType="Array" type="Duality.ContentRef`1[[Duality.Resources.Prefab]][]" id="4124045920">
+              <item dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Prefab]]">
+                <contentPath dataType="String">Data\LevelObjects\Obstacle.Prefab.res</contentPath>
+              </item>
+            </obstacleObjects>
             <spawnIndex dataType="Int">0</spawnIndex>
             <spawnRate dataType="Float">1</spawnRate>
             <spawnTimer dataType="Float">0</spawnTimer>

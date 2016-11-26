@@ -12,7 +12,7 @@ namespace Game
 		private int spawnIndex = 0;
 		private float spawnTimer = 0.0f;
 		private float spawnRate = 1.0f;
-		private ContentRef<Prefab> obstacleObject = null;
+		private ContentRef<Prefab>[] obstacleObjects = null;
 		private ContentRef<Prefab> clockObject = null;
 		private ContentRef<Prefab> memoryObject = null;
 		private ContentRef<Texture>[] memoryImages = null;
@@ -22,10 +22,10 @@ namespace Game
 			get { return this.spawnRate; }
 			set { this.spawnRate = value; }
 		}
-		public ContentRef<Prefab> ObstacleObject
+		public ContentRef<Prefab>[] ObstacleObjects
 		{
-			get { return this.obstacleObject; }
-			set { this.obstacleObject = value; }
+			get { return this.obstacleObjects; }
+			set { this.obstacleObjects = value; }
 		}
 		public ContentRef<Prefab> ClockObject
 		{
@@ -89,7 +89,7 @@ namespace Game
 				500 * MathF.Rnd.NextFloat(-1.0f, 1.0f),
 				0.0f);
 
-			Prefab spawnedPrefab = this.obstacleObject.Res;
+			Prefab spawnedPrefab = MathF.Rnd.OneOf(this.obstacleObjects).Res;
 			GameObject obj = spawnedPrefab.Instantiate(pos);
 			this.GameObj.ParentScene.AddObject(obj);
 		}
