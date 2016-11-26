@@ -14,7 +14,7 @@ namespace Game
 		{
 			base.OnCollected();
 			PlayerController player = this.GameObj.ParentScene.FindComponent<PlayerController>();
-			player.Health += 20;
+			player.Health += 10;
 		}
 	}
 }

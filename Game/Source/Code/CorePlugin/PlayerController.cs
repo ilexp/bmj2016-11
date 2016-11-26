@@ -12,7 +12,7 @@ namespace Game
 	public class PlayerController : Component, ICmpUpdatable
 	{
 		private bool gameOver = false;
-		private float health = 100.0f;
+		private float health = 80.0f;
 		private float acceleration = 0.1f;
 		private float forwardSpeed = 2.0f;
 		private float backwardSpeed = 8.0f;

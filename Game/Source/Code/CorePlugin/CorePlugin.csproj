@@ -64,6 +64,9 @@
     <Compile Include="ErraticMovement.cs" />
     <Compile Include="LevelObjectController.cs" />
     <Compile Include="HeadUpDisplay.cs" />
+    <Compile Include="ParticleSystem\Particle.cs" />
+    <Compile Include="ParticleSystem\ParticleEffect.cs" />
+    <Compile Include="ParticleSystem\ParticleEmitter.cs" />
     <Compile Include="PlayerController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

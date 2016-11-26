@@ -14,6 +14,7 @@ namespace Game
 		private float targetFade = 1.0f;
 		private PlayerController player;
 		private ContentRef<Font> font;
+		private ColorRgba textColor;
 
 		public PlayerController Player
 		{
@@ -24,6 +25,11 @@ namespace Game
 		{
 			get { return this.font; }
 			set { this.font = value; }
+		}
+		public ColorRgba TextColor
+		{
+			get { return this.textColor; }
+			set { this.textColor = value; }
 		}
 		float ICmpRenderer.BoundRadius
 		{
@@ -62,6 +68,7 @@ namespace Game
 				"{0} years left",
 				(int)this.player.Health);
 			canvas.State.SetMaterial(new BatchInfo(DrawTechnique.SharpAlpha, ColorRgba.White));
+			canvas.State.ColorTint = this.textColor;
 			canvas.DrawText(upperLeftText, 20, 10);
 
 			if (this.fadeValue < 1.0f)
