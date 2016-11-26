@@ -175,6 +175,7 @@
             <backwardSpeed dataType="Float">8</backwardSpeed>
             <forwardSpeed dataType="Float">2</forwardSpeed>
             <gameobj dataType="ObjectRef">2940282189</gameobj>
+            <gameOver dataType="Bool">false</gameOver>
             <health dataType="Float">100</health>
             <verticalSpeed dataType="Float">6</verticalSpeed>
           </item>
@@ -288,11 +289,13 @@
         <_items dataType="Array" type="Duality.Component[]" id="214996752" length="4">
           <item dataType="Struct" type="Game.HeadUpDisplay" id="2545502449">
             <active dataType="Bool">true</active>
+            <fadeValue dataType="Float">0</fadeValue>
             <font dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Font]]">
               <contentPath dataType="String">Data\Graphics\Ranga-Regular.Font.res</contentPath>
             </font>
             <gameobj dataType="ObjectRef">1880284140</gameobj>
             <player dataType="ObjectRef">993819802</player>
+            <targetFade dataType="Float">1</targetFade>
           </item>
         </_items>
         <_size dataType="Int">1</_size>

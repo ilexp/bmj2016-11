@@ -8,8 +8,10 @@ using Duality.Drawing;
 
 namespace Game
 {
-	public class HeadUpDisplay : Component, ICmpRenderer
+	public class HeadUpDisplay : Component, ICmpRenderer, ICmpUpdatable
 	{
+		private float fadeValue = 0.0f;
+		private float targetFade = 1.0f;
 		private PlayerController player;
 		private ContentRef<Font> font;
 
@@ -28,9 +30,24 @@ namespace Game
 			get { return 0.0f; }
 		}
 
+		public void FadeOut()
+		{
+			this.targetFade = 0.0f;
+		}
+
+		void ICmpUpdatable.OnUpdate()
+		{
+			this.fadeValue += (this.targetFade - this.fadeValue) * 0.01f * Time.TimeMult;
+
+			if (this.player.GameOver)
+			{
+				this.FadeOut();
+			}
+		}
 		bool ICmpRenderer.IsVisible(IDrawDevice device)
 		{
-			return 
+			return
+				DualityApp.ExecContext != DualityApp.ExecutionContext.Editor &&
 				(device.VisibilityMask & VisibilityFlag.ScreenOverlay) != VisibilityFlag.None &&
 				(device.VisibilityMask & VisibilityFlag.AllGroups) != VisibilityFlag.None;
 		}
@@ -44,7 +61,15 @@ namespace Game
 			string upperLeftText = string.Format(
 				"{0} years left",
 				(int)this.player.Health);
+			canvas.State.SetMaterial(new BatchInfo(DrawTechnique.SharpAlpha, ColorRgba.White));
 			canvas.DrawText(upperLeftText, 20, 10);
+
+			if (this.fadeValue < 1.0f)
+			{
+				canvas.State.SetMaterial(new BatchInfo(DrawTechnique.Alpha, ColorRgba.White));
+				canvas.State.ColorTint = ColorRgba.Black.WithAlpha(MathF.Clamp(1.0f - this.fadeValue, 0.0f, 1.0f));
+				canvas.FillRect(0, 0, device.TargetSize.X, device.TargetSize.Y);
+			}
 		}
 	}
 }

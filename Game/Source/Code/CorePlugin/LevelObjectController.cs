@@ -11,9 +11,15 @@ namespace Game
 	[RequiredComponent(typeof(RigidBody))]
 	public class LevelObjectController : Component, ICmpUpdatable, ICmpInitializable
 	{
+		private float randomInitialInertia = 0.0f;
 		private float acceleration = 0.2f;
 		private Vector2 targetVelocity = Vector2.Zero;
 		
+		public float RandomInitialInertia
+		{
+			get { return this.randomInitialInertia; }
+			set { this.randomInitialInertia = value; }
+		}
 		public float Acceleration
 		{
 			get { return this.acceleration; }
@@ -39,6 +45,7 @@ namespace Game
 			{
 				RigidBody body = this.GameObj.GetComponent<RigidBody>();
 				body.LinearVelocity = this.targetVelocity;
+				body.AngularVelocity = MathF.Rnd.NextFloat(-this.randomInitialInertia, this.randomInitialInertia);
 			}
 		}
 		void ICmpInitializable.OnShutdown(ShutdownContext context) { }

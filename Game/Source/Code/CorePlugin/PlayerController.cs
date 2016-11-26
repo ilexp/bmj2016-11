@@ -11,12 +11,17 @@ namespace Game
 	[RequiredComponent(typeof(RigidBody))]
 	public class PlayerController : Component, ICmpUpdatable
 	{
+		private bool gameOver = false;
 		private float health = 100.0f;
 		private float acceleration = 0.1f;
 		private float forwardSpeed = 2.0f;
 		private float backwardSpeed = 8.0f;
 		private float verticalSpeed = 6.0f;
 
+		public bool GameOver
+		{
+			get { return this.gameOver; }
+		}
 		public float Health
 		{
 			get { return this.health; }
@@ -48,14 +53,17 @@ namespace Game
 			RigidBody body = this.GameObj.GetComponent<RigidBody>();
 
 			Vector2 targetMovement = Vector2.Zero;
-			if (DualityApp.Keyboard[Key.Left])
-				targetMovement += new Vector2(-1.0f, 0.0f);
-			if (DualityApp.Keyboard[Key.Right])
-				targetMovement += new Vector2(1.0f, 0.0f);
-			if (DualityApp.Keyboard[Key.Up])
-				targetMovement += new Vector2(0.0f, -1.0f);
-			if (DualityApp.Keyboard[Key.Down])
-				targetMovement += new Vector2(0.0f, 1.0f);
+			if (!this.gameOver)
+			{
+				if (DualityApp.Keyboard[Key.Left])
+					targetMovement += new Vector2(-1.0f, 0.0f);
+				if (DualityApp.Keyboard[Key.Right])
+					targetMovement += new Vector2(1.0f, 0.0f);
+				if (DualityApp.Keyboard[Key.Up])
+					targetMovement += new Vector2(0.0f, -1.0f);
+				if (DualityApp.Keyboard[Key.Down])
+					targetMovement += new Vector2(0.0f, 1.0f);
+			}
 
 			Vector2 targetVelocity = targetMovement * new Vector2(
 				targetMovement.X > 0.0f ? this.forwardSpeed : this.backwardSpeed, 
@@ -63,6 +71,8 @@ namespace Game
 			body.LinearVelocity += (targetVelocity - body.LinearVelocity) * this.acceleration * Time.TimeMult;
 
 			this.health -= Time.SPFMult * Time.TimeMult;
+			if (this.health < 0.0f)
+				this.gameOver = true;
 		}
 	}
 }

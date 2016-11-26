@@ -29,7 +29,7 @@
         <item dataType="Struct" type="Duality.Components.Physics.RigidBody" id="2933450579">
           <active dataType="Bool">true</active>
           <angularDamp dataType="Float">0.3</angularDamp>
-          <angularVel dataType="Float">0</angularVel>
+          <angularVel dataType="Float">0.007892845</angularVel>
           <bodyType dataType="Enum" type="Duality.Components.Physics.BodyType" name="Dynamic" value="1" />
           <colCat dataType="Enum" type="Duality.Components.Physics.CollisionCategory" name="Cat1" value="1" />
           <colFilter />
@@ -57,7 +57,7 @@
               </item>
             </_items>
             <_size dataType="Int">1</_size>
-            <_version dataType="Int">10</_version>
+            <_version dataType="Int">12</_version>
           </shapes>
         </item>
         <item dataType="Struct" type="Duality.Components.Renderers.RigidBodyRenderer" id="469367245">
@@ -87,6 +87,7 @@
           <acceleration dataType="Float">0.1</acceleration>
           <active dataType="Bool">true</active>
           <gameobj dataType="ObjectRef">4165641351</gameobj>
+          <randomInitialInertia dataType="Float">0.02</randomInitialInertia>
           <targetVelocity dataType="Struct" type="Duality.Vector2" />
         </item>
         <item dataType="Struct" type="Game.ErraticMovement" id="2324507994">
