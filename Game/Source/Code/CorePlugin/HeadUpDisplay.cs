@@ -16,6 +16,9 @@ namespace Game
 		private ContentRef<Font> font;
 		private ColorRgba textColor;
 		private ColorRgba targetFadeColor;
+		private float memoryFade = 0.0f;
+		private ContentRef<Texture> memory;
+		private float memoryAngle = 0.0f;
 
 		public PlayerController Player
 		{
@@ -37,9 +40,17 @@ namespace Game
 			get { return 0.0f; }
 		}
 
+		public void FlashMemory(ContentRef<Texture> memory)
+		{
+			this.memory = memory;
+			this.memoryFade = 1.0f;
+			this.memoryAngle = MathF.NormalizeAngle(MathF.DegToRad(MathF.Rnd.NextFloat(-10.0f, 10.0f)));
+		}
+
 		void ICmpUpdatable.OnUpdate()
 		{
 			this.fadeValue += (this.targetFade - this.fadeValue) * 0.01f * Time.TimeMult;
+			this.memoryFade -= 0.5f * Time.SPFMult * Time.TimeMult;
 
 			if (this.player.GameOver)
 			{
@@ -80,11 +91,35 @@ namespace Game
 			canvas.State.ColorTint = this.textColor;
 			canvas.DrawText(lowerLeftText, 20, device.TargetSize.Y - 10, blockAlign: Alignment.BottomLeft);
 
+			canvas.State.SetMaterial(new BatchInfo(DrawTechnique.Alpha, ColorRgba.White));
 			if (this.fadeValue < 1.0f)
 			{
-				canvas.State.SetMaterial(new BatchInfo(DrawTechnique.Alpha, ColorRgba.White));
 				canvas.State.ColorTint = this.targetFadeColor.WithAlpha(MathF.Clamp(1.0f - this.fadeValue, 0.0f, 1.0f));
 				canvas.FillRect(0, 0, device.TargetSize.X, device.TargetSize.Y);
+			}
+
+			if (this.memoryFade > 0.0f)
+			{
+				Vector2 screenCenter = device.TargetSize * 0.5f;
+				Vector2 imageSize = new Vector2(this.memory.Res.PixelWidth, this.memory.Res.PixelHeight);
+
+				canvas.State.SetMaterial(new BatchInfo(DrawTechnique.Alpha, ColorRgba.White, this.memory));
+				canvas.State.ColorTint = ColorRgba.White.WithAlpha(this.memoryFade);
+				canvas.State.TransformAngle = this.memoryAngle;
+				canvas.State.TransformHandle = imageSize * 0.5f;
+				canvas.FillRect(
+					screenCenter.X, 
+					screenCenter.Y, 
+					imageSize.X, 
+					imageSize.Y);
+
+				canvas.State.SetMaterial(new BatchInfo(DrawTechnique.Add, ColorRgba.White, this.memory));
+				canvas.State.ColorTint = ColorRgba.White.WithAlpha(MathF.Clamp((this.memoryFade - 0.5f) * 2.0f, 0.0f, 1.0f));
+				canvas.FillRect(
+					screenCenter.X,
+					screenCenter.Y,
+					imageSize.X,
+					imageSize.Y);
 			}
 		}
 	}
