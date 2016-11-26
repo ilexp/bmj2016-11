@@ -50,7 +50,7 @@ namespace Game
 		void ICmpUpdatable.OnUpdate()
 		{
 			this.fadeValue += (this.targetFade - this.fadeValue) * 0.01f * Time.TimeMult;
-			this.memoryFade -= 0.5f * Time.SPFMult * Time.TimeMult;
+			this.memoryFade -= 0.25f * Time.SPFMult * Time.TimeMult;
 
 			if (this.player.GameOver)
 			{
@@ -114,7 +114,7 @@ namespace Game
 					imageSize.Y);
 
 				canvas.State.SetMaterial(new BatchInfo(DrawTechnique.Add, ColorRgba.White, this.memory));
-				canvas.State.ColorTint = ColorRgba.White.WithAlpha(MathF.Clamp((this.memoryFade - 0.5f) * 2.0f, 0.0f, 1.0f));
+				canvas.State.ColorTint = ColorRgba.White.WithAlpha(MathF.Clamp((this.memoryFade - 0.75f) * 2.0f, 0.0f, 1.0f));
 				canvas.FillRect(
 					screenCenter.X,
 					screenCenter.Y,
