@@ -172,12 +172,14 @@
           <item dataType="Struct" type="Game.PlayerController" id="993819802">
             <acceleration dataType="Float">0.1</acceleration>
             <active dataType="Bool">true</active>
-            <backwardSpeed dataType="Float">8</backwardSpeed>
-            <forwardSpeed dataType="Float">2</forwardSpeed>
+            <backwardSpeed dataType="Float">4</backwardSpeed>
+            <forwardSpeed dataType="Float">1</forwardSpeed>
             <gameobj dataType="ObjectRef">2940282189</gameobj>
             <gameOver dataType="Bool">false</gameOver>
+            <gameWon dataType="Bool">false</gameWon>
             <health dataType="Float">80</health>
-            <verticalSpeed dataType="Float">6</verticalSpeed>
+            <memoryCount dataType="Int">0</memoryCount>
+            <verticalSpeed dataType="Float">3</verticalSpeed>
           </item>
           <item dataType="Struct" type="Duality.Components.Renderers.SpriteRenderer" id="287481461">
             <active dataType="Bool">true</active>
@@ -296,6 +298,7 @@
             <gameobj dataType="ObjectRef">1880284140</gameobj>
             <player dataType="ObjectRef">993819802</player>
             <targetFade dataType="Float">1</targetFade>
+            <targetFadeColor dataType="Struct" type="Duality.Drawing.ColorRgba" />
             <textColor dataType="Struct" type="Duality.Drawing.ColorRgba">
               <A dataType="Byte">255</A>
               <B dataType="Byte">255</B>
@@ -470,7 +473,7 @@
                 <item dataType="Struct" type="ParticleSystem.ParticleEmitter" id="653708444">
                   <basePos dataType="Struct" type="Duality.Vector3" />
                   <baseVel dataType="Struct" type="Duality.Vector3">
-                    <X dataType="Float">-11</X>
+                    <X dataType="Float">-7</X>
                     <Y dataType="Float">0</Y>
                     <Z dataType="Float">0</Z>
                   </baseVel>
@@ -604,7 +607,7 @@
                 <item dataType="Struct" type="ParticleSystem.ParticleEmitter" id="1893098340">
                   <basePos dataType="Struct" type="Duality.Vector3" />
                   <baseVel dataType="Struct" type="Duality.Vector3">
-                    <X dataType="Float">-11</X>
+                    <X dataType="Float">-7</X>
                     <Y dataType="Float">0</Y>
                     <Z dataType="Float">0</Z>
                   </baseVel>
@@ -738,7 +741,7 @@
                 <item dataType="Struct" type="ParticleSystem.ParticleEmitter" id="2697606176">
                   <basePos dataType="Struct" type="Duality.Vector3" />
                   <baseVel dataType="Struct" type="Duality.Vector3">
-                    <X dataType="Float">-11</X>
+                    <X dataType="Float">-7</X>
                     <Y dataType="Float">0</Y>
                     <Z dataType="Float">0</Z>
                   </baseVel>
