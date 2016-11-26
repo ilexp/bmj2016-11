@@ -534,6 +534,7 @@
               <Y dataType="Float">16</Y>
             </particleSize>
             <visibilityGroup dataType="Enum" type="Duality.Drawing.VisibilityFlag" name="Group0" value="1" />
+            <warmStartingTime dataType="Float">10</warmStartingTime>
           </item>
         </_items>
         <_size dataType="Int">2</_size>
@@ -667,6 +668,7 @@
               <Y dataType="Float">16</Y>
             </particleSize>
             <visibilityGroup dataType="Enum" type="Duality.Drawing.VisibilityFlag" name="Group0" value="1" />
+            <warmStartingTime dataType="Float">10</warmStartingTime>
           </item>
         </_items>
         <_size dataType="Int">2</_size>
@@ -800,6 +802,7 @@
               <Y dataType="Float">16</Y>
             </particleSize>
             <visibilityGroup dataType="Enum" type="Duality.Drawing.VisibilityFlag" name="Group0" value="1" />
+            <warmStartingTime dataType="Float">10</warmStartingTime>
           </item>
         </_items>
         <_size dataType="Int">2</_size>

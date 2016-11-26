@@ -108,9 +108,9 @@ namespace ParticleSystem
 			set { this.depthMult = value; }
 		}
 
-		public void Update(ParticleEffect effect)
+		public void Update(ParticleEffect effect, float timeMult)
 		{
-			this.burstTimer -= Time.MsPFMult * Time.TimeMult;
+			this.burstTimer -= Time.MsPFMult * timeMult;
 			while (this.burstTimer <= 0.0f && (this.burstCount < this.maxBurstCount || this.maxBurstCount < 0))
 			{
 				this.burstTimer += MathF.Rnd.NextFloat(this.burstDelay.MinValue, this.burstDelay.MaxValue);

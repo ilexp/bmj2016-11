@@ -21,6 +21,7 @@ namespace ParticleSystem
 		private float                 angularDrag   = 0.3f;
 		private float                 fadeInAt      = 0.0f;
 		private float                 fadeOutAt     = 0.75f;
+		private float                 warmStartingTime = 0.0f;
 		private List<ParticleEmitter> emitters      = new List<ParticleEmitter>();
 
 		[DontSerialize]
@@ -69,6 +70,12 @@ namespace ParticleSystem
 		{
 			get { return this.fadeOutAt; }
 			set { this.fadeOutAt = value; }
+		}
+		[EditorHintRange(0.0f, 10.0f)]
+		public float WarmStartingTime
+		{
+			get { return this.warmStartingTime; }
+			set { this.warmStartingTime = value; }
 		}
 		public List<ParticleEmitter> Emitters
 		{
@@ -120,12 +127,49 @@ namespace ParticleSystem
 				return null;
 		}
 
-		private void UpdateEmitters()
+		private void UpdateEmitters(float timeMult)
 		{
 			for (int i = this.emitters.Count - 1; i >= 0; i--)
 			{
 				if (this.emitters[i] == null) continue;
-				this.emitters[i].Update(this);
+				this.emitters[i].Update(this, timeMult);
+			}
+		}
+		private void UpdateParticles(float timeMult)
+		{
+			if (this.particles == null) return;
+
+			Vector3 boundMax = Vector3.Zero;
+			float timePassed = Time.MsPFMult * timeMult;
+
+			Particle[] particleData = this.particles.Data;
+			int particleCount = this.particles.Count;
+			for (int i = particleCount - 1; i >= 0; i--)
+			{
+				particleData[i].Position += particleData[i].Velocity * timeMult;
+				particleData[i].Angle += particleData[i].AngleVelocity * timeMult;
+				particleData[i].Velocity += this.constantForce * 0.01f * timeMult;
+				particleData[i].Velocity *= MathF.Pow(1.0f - (this.linearDrag * 0.1f), timeMult);
+				particleData[i].AngleVelocity *= MathF.Pow(1.0f - (this.angularDrag * 0.1f), timeMult);
+				particleData[i].AgeFactor += timePassed / particleData[i].TimeToLive;
+				if (particleData[i].AgeFactor > 1.0f)
+					this.RemoveParticle(i);
+
+				boundMax.X = MathF.Max(boundMax.X, MathF.Abs(particleData[i].Position.X));
+				boundMax.Y = MathF.Max(boundMax.Y, MathF.Abs(particleData[i].Position.Y));
+				boundMax.Z = MathF.Max(boundMax.Z, MathF.Abs(particleData[i].Position.Z));
+			}
+
+			this.boundRadius = boundMax.Length;
+			this.boundRadius += this.particleSize.Length;
+		}
+		private void InitWarmStarting()
+		{
+			int frameCount = (int)(this.warmStartingTime / Time.SPFMult);
+			for (int i = 0; i < frameCount; i++)
+			{
+				this.UpdateParticles(1.0f);
+				this.UpdateEmitters(1.0f);
 			}
 		}
 
@@ -218,42 +262,18 @@ namespace ParticleSystem
 		void ICmpUpdatable.OnUpdate()
 		{
 			// Update all existing particles
-			Vector3 boundMax = Vector3.Zero;
-			if (this.particles != null)
-			{
-				float timeMult = Time.TimeMult;
-				float timePassed = Time.MsPFMult * timeMult;
-				
-				Particle[] particleData = this.particles.Data;
-				int particleCount = this.particles.Count;
-				for (int i = particleCount - 1; i >= 0; i--)
-				{
-					particleData[i].Position		+= particleData[i].Velocity * timeMult;
-					particleData[i].Angle			+= particleData[i].AngleVelocity * timeMult;
-					particleData[i].Velocity		+= this.constantForce * 0.01f * timeMult;
-					particleData[i].Velocity		*= MathF.Pow(1.0f - (this.linearDrag * 0.1f), timeMult);
-					particleData[i].AngleVelocity	*= MathF.Pow(1.0f - (this.angularDrag * 0.1f), timeMult);
-					particleData[i].AgeFactor		+= timePassed / particleData[i].TimeToLive;
-					if (particleData[i].AgeFactor > 1.0f)
-						this.RemoveParticle(i);
-
-					boundMax.X = MathF.Max(boundMax.X, MathF.Abs(particleData[i].Position.X));
-					boundMax.Y = MathF.Max(boundMax.Y, MathF.Abs(particleData[i].Position.Y));
-					boundMax.Z = MathF.Max(boundMax.Z, MathF.Abs(particleData[i].Position.Z));
-				}
-			}
-			this.boundRadius = boundMax.Length;
-			this.boundRadius += this.particleSize.Length;
+			this.UpdateParticles(Time.TimeMult);
 
 			// Update particle emission
-			this.UpdateEmitters();
+			this.UpdateEmitters(Time.TimeMult);
 		}
 		void ICmpInitializable.OnInit(Component.InitContext context)
 		{
 			if (context == InitContext.Activate)
 			{
 				// When activating, directly update particle emitters once, so there is already something to see.
-				this.UpdateEmitters();
+				this.UpdateEmitters(Time.TimeMult);
+				this.InitWarmStarting();
 			}
 		}
 		void ICmpInitializable.OnShutdown(Component.ShutdownContext context) {}
