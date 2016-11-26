@@ -43,9 +43,9 @@
                 <item dataType="Struct" type="Duality.Components.Camera+Pass" id="3150235204">
                   <clearColor dataType="Struct" type="Duality.Drawing.ColorRgba">
                     <A dataType="Byte">255</A>
-                    <B dataType="Byte">27</B>
-                    <G dataType="Byte">25</G>
-                    <R dataType="Byte">24</R>
+                    <B dataType="Byte">41</B>
+                    <G dataType="Byte">38</G>
+                    <R dataType="Byte">36</R>
                   </clearColor>
                   <clearDepth dataType="Float">1</clearDepth>
                   <clearFlags dataType="Enum" type="Duality.Drawing.ClearFlag" name="All" value="3" />
@@ -511,7 +511,7 @@
           </item>
           <item dataType="Struct" type="ParticleSystem.ParticleEffect" id="3429295394">
             <active dataType="Bool">true</active>
-            <angularDrag dataType="Float">0.3</angularDrag>
+            <angularDrag dataType="Float">0</angularDrag>
             <constantForce dataType="Struct" type="Duality.Vector3" />
             <emitters dataType="Struct" type="System.Collections.Generic.List`1[[ParticleSystem.ParticleEmitter]]" id="3748743514">
               <_items dataType="Array" type="ParticleSystem.ParticleEmitter[]" id="1319730688" length="4">
@@ -581,8 +581,8 @@
               <contentPath dataType="String">Data\Graphics\Ghost_leaves.Material.res</contentPath>
             </material>
             <particleSize dataType="Struct" type="Duality.Vector2">
-              <X dataType="Float">16</X>
-              <Y dataType="Float">16</Y>
+              <X dataType="Float">32</X>
+              <Y dataType="Float">32</Y>
             </particleSize>
             <visibilityGroup dataType="Enum" type="Duality.Drawing.VisibilityFlag" name="Group0" value="1" />
             <warmStartingTime dataType="Float">10</warmStartingTime>
@@ -648,7 +648,7 @@
           </item>
           <item dataType="Struct" type="ParticleSystem.ParticleEffect" id="2129798064">
             <active dataType="Bool">true</active>
-            <angularDrag dataType="Float">0.3</angularDrag>
+            <angularDrag dataType="Float">0</angularDrag>
             <constantForce dataType="Struct" type="Duality.Vector3" />
             <emitters dataType="Struct" type="System.Collections.Generic.List`1[[ParticleSystem.ParticleEmitter]]" id="1845078072">
               <_items dataType="Array" type="ParticleSystem.ParticleEmitter[]" id="3108745836" length="4">
@@ -718,8 +718,8 @@
               <contentPath dataType="String">Data\Graphics\Ghost_leaves.Material.res</contentPath>
             </material>
             <particleSize dataType="Struct" type="Duality.Vector2">
-              <X dataType="Float">16</X>
-              <Y dataType="Float">16</Y>
+              <X dataType="Float">32</X>
+              <Y dataType="Float">32</Y>
             </particleSize>
             <visibilityGroup dataType="Enum" type="Duality.Drawing.VisibilityFlag" name="Group0" value="1" />
             <warmStartingTime dataType="Float">10</warmStartingTime>
@@ -785,7 +785,7 @@
           </item>
           <item dataType="Struct" type="ParticleSystem.ParticleEffect" id="2810634645">
             <active dataType="Bool">true</active>
-            <angularDrag dataType="Float">0.3</angularDrag>
+            <angularDrag dataType="Float">0</angularDrag>
             <constantForce dataType="Struct" type="Duality.Vector3" />
             <emitters dataType="Struct" type="System.Collections.Generic.List`1[[ParticleSystem.ParticleEmitter]]" id="465982885">
               <_items dataType="Array" type="ParticleSystem.ParticleEmitter[]" id="1896180118" length="4">
@@ -855,8 +855,8 @@
               <contentPath dataType="String">Data\Graphics\Ghost_leaves.Material.res</contentPath>
             </material>
             <particleSize dataType="Struct" type="Duality.Vector2">
-              <X dataType="Float">16</X>
-              <Y dataType="Float">16</Y>
+              <X dataType="Float">32</X>
+              <Y dataType="Float">32</Y>
             </particleSize>
             <visibilityGroup dataType="Enum" type="Duality.Drawing.VisibilityFlag" name="Group0" value="1" />
             <warmStartingTime dataType="Float">10</warmStartingTime>

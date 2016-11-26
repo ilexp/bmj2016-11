@@ -2,7 +2,7 @@
   <assetInfo />
   <info dataType="Struct" type="Duality.Drawing.BatchInfo" id="427169525">
     <dirtyFlag dataType="Enum" type="Duality.Drawing.BatchInfo+DirtyFlag" name="None" value="0" />
-    <hashCode dataType="Int">-1255167244</hashCode>
+    <hashCode dataType="Int">411680943</hashCode>
     <mainColor dataType="Struct" type="Duality.Drawing.ColorRgba">
       <A dataType="Byte">255</A>
       <B dataType="Byte">255</B>
@@ -10,13 +10,13 @@
       <R dataType="Byte">255</R>
     </mainColor>
     <technique dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.DrawTechnique]]">
-      <contentPath dataType="String">Default:DrawTechnique:Mask</contentPath>
+      <contentPath dataType="String">Default:DrawTechnique:Alpha</contentPath>
     </technique>
     <textures dataType="Struct" type="System.Collections.Generic.Dictionary`2[[System.String],[Duality.ContentRef`1[[Duality.Resources.Texture]]]]" id="1100841590" surrogate="true">
       <header />
       <body>
         <mainTex dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Texture]]">
-          <contentPath dataType="String">Data\Graphics\Ghost_leaves.Texture.res</contentPath>
+          <contentPath dataType="String">Data\Graphics\Ghost_logo.Texture.res</contentPath>
         </mainTex>
       </body>
     </textures>
