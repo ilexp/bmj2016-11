@@ -11,16 +11,27 @@ namespace Game
 	[RequiredComponent(typeof(RigidBody))]
 	public class PlayerController : Component, ICmpUpdatable
 	{
+		private bool gameWon = false;
 		private bool gameOver = false;
+		private int memoryCount = 0;
 		private float health = 80.0f;
 		private float acceleration = 0.1f;
 		private float forwardSpeed = 2.0f;
 		private float backwardSpeed = 8.0f;
 		private float verticalSpeed = 6.0f;
 
+		public bool GameWon
+		{
+			get { return this.gameWon; }
+		}
 		public bool GameOver
 		{
 			get { return this.gameOver; }
+		}
+		public int MemoryCount
+		{
+			get { return this.memoryCount; }
+			set { this.memoryCount = value; }
 		}
 		public float Health
 		{
@@ -73,6 +84,9 @@ namespace Game
 			this.health -= Time.SPFMult * Time.TimeMult;
 			if (this.health < 0.0f)
 				this.gameOver = true;
+
+			if (this.memoryCount >= 5)
+				this.gameWon = true;
 		}
 	}
 }

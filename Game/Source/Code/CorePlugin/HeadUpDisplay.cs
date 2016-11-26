@@ -15,6 +15,7 @@ namespace Game
 		private PlayerController player;
 		private ContentRef<Font> font;
 		private ColorRgba textColor;
+		private ColorRgba targetFadeColor;
 
 		public PlayerController Player
 		{
@@ -36,18 +37,19 @@ namespace Game
 			get { return 0.0f; }
 		}
 
-		public void FadeOut()
-		{
-			this.targetFade = 0.0f;
-		}
-
 		void ICmpUpdatable.OnUpdate()
 		{
 			this.fadeValue += (this.targetFade - this.fadeValue) * 0.01f * Time.TimeMult;
 
 			if (this.player.GameOver)
 			{
-				this.FadeOut();
+				this.targetFade = 0.0f;
+				this.targetFadeColor = ColorRgba.Black;
+			}
+			else if (this.player.GameWon)
+			{
+				this.targetFade = 0.0f;
+				this.targetFadeColor = ColorRgba.White;
 			}
 		}
 		bool ICmpRenderer.IsVisible(IDrawDevice device)
@@ -71,10 +73,17 @@ namespace Game
 			canvas.State.ColorTint = this.textColor;
 			canvas.DrawText(upperLeftText, 20, 10);
 
+			string lowerLeftText = string.Format(
+				"{0} memories",
+				(int)this.player.MemoryCount);
+			canvas.State.SetMaterial(new BatchInfo(DrawTechnique.SharpAlpha, ColorRgba.White));
+			canvas.State.ColorTint = this.textColor;
+			canvas.DrawText(lowerLeftText, 20, device.TargetSize.Y - 10, blockAlign: Alignment.BottomLeft);
+
 			if (this.fadeValue < 1.0f)
 			{
 				canvas.State.SetMaterial(new BatchInfo(DrawTechnique.Alpha, ColorRgba.White));
-				canvas.State.ColorTint = ColorRgba.Black.WithAlpha(MathF.Clamp(1.0f - this.fadeValue, 0.0f, 1.0f));
+				canvas.State.ColorTint = this.targetFadeColor.WithAlpha(MathF.Clamp(1.0f - this.fadeValue, 0.0f, 1.0f));
 				canvas.FillRect(0, 0, device.TargetSize.X, device.TargetSize.Y);
 			}
 		}
