@@ -14,6 +14,8 @@ namespace Game
 		private float spawnRate = 1.0f;
 		private ContentRef<Prefab> obstacleObject = null;
 		private ContentRef<Prefab> clockObject = null;
+		private ContentRef<Prefab> memoryObject = null;
+		private ContentRef<Texture>[] memoryImages = null;
 
 		public float SpawnRate
 		{
@@ -30,6 +32,16 @@ namespace Game
 			get { return this.clockObject; }
 			set { this.clockObject = value; }
 		}
+		public ContentRef<Prefab> MemoryObject
+		{
+			get { return this.memoryObject; }
+			set { this.memoryObject = value; }
+		}
+		public ContentRef<Texture>[] MemoryImages
+		{
+			get { return this.memoryImages; }
+			set { this.memoryImages = value; }
+		}
 
 		void ICmpUpdatable.OnUpdate()
 		{
@@ -39,8 +51,10 @@ namespace Game
 				this.spawnTimer += MathF.Rnd.NextFloat(0.8f, 1.25f);
 				this.spawnIndex++;
 
-				if ((this.spawnIndex % 10) == 0)
+				if ((this.spawnIndex % 12) == 0)
 					this.SpawnClock();
+				else if ((this.spawnIndex % 12) == 6)
+					this.SpawnMemory();
 				else
 					this.SpawnObstacle();
 			}
@@ -54,6 +68,17 @@ namespace Game
 				0.0f);
 
 			Prefab spawnedPrefab = this.clockObject.Res;
+			GameObject obj = spawnedPrefab.Instantiate(pos);
+			this.GameObj.ParentScene.AddObject(obj);
+		}
+		private void SpawnMemory()
+		{
+			Vector3 pos = new Vector3(
+				1200,
+				300 * MathF.Rnd.NextFloat(-1.0f, 1.0f),
+				0.0f);
+
+			Prefab spawnedPrefab = this.memoryObject.Res;
 			GameObject obj = spawnedPrefab.Instantiate(pos);
 			this.GameObj.ParentScene.AddObject(obj);
 		}
