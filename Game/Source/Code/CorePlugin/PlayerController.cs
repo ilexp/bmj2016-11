@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Duality;
+using Duality.Audio;
 using Duality.Input;
+using Duality.Resources;
 using Duality.Components.Physics;
 
 namespace Game
@@ -11,6 +13,8 @@ namespace Game
 	[RequiredComponent(typeof(RigidBody))]
 	public class PlayerController : Component, ICmpUpdatable
 	{
+		private ContentRef<Sound> music = null;
+		private SoundInstance musicInstance = null;
 		private bool gameWon = false;
 		private bool gameOver = false;
 		private int memoryCount = 0;
@@ -20,6 +24,11 @@ namespace Game
 		private float backwardSpeed = 8.0f;
 		private float verticalSpeed = 6.0f;
 
+		public ContentRef<Sound> Music
+		{
+			get { return this.music; }
+			set { this.music = value; }
+		}
 		public bool GameWon
 		{
 			get { return this.gameWon; }
@@ -63,6 +72,11 @@ namespace Game
 		{
 			RigidBody body = this.GameObj.GetComponent<RigidBody>();
 
+			if (this.music.IsAvailable && this.musicInstance == null)
+			{
+				this.musicInstance = DualityApp.Sound.PlaySound(this.music);
+			}
+
 			Vector2 targetMovement = Vector2.Zero;
 			if (!this.gameOver)
 			{
@@ -87,7 +101,11 @@ namespace Game
 
 			LevelGenerator gen = this.GameObj.ParentScene.FindComponent<LevelGenerator>();
 			if (this.memoryCount > gen.MemoryImages.Length)
+			{
 				this.gameWon = true;
+				if (this.musicInstance != null)
+					this.musicInstance.FadeOut(3.0f);
+			}
 		}
 	}
 }

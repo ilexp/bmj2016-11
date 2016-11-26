@@ -179,6 +179,10 @@
             <gameWon dataType="Bool">false</gameWon>
             <health dataType="Float">80</health>
             <memoryCount dataType="Int">0</memoryCount>
+            <music dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Sound]]">
+              <contentPath dataType="String">Data\Audio\Background.Sound.res</contentPath>
+            </music>
+            <musicInstance />
             <verticalSpeed dataType="Float">3</verticalSpeed>
           </item>
           <item dataType="Struct" type="Duality.Components.Renderers.SpriteRenderer" id="287481461">
