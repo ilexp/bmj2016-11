@@ -524,8 +524,8 @@
                     <Z dataType="Float">0</Z>
                   </baseVel>
                   <burstDelay dataType="Struct" type="Duality.Range">
-                    <MaxValue dataType="Float">150</MaxValue>
-                    <MinValue dataType="Float">125</MinValue>
+                    <MaxValue dataType="Float">175</MaxValue>
+                    <MinValue dataType="Float">150</MinValue>
                   </burstDelay>
                   <burstParticleNum dataType="Struct" type="Duality.Range">
                     <MaxValue dataType="Float">1</MaxValue>
@@ -662,8 +662,8 @@
                     <Z dataType="Float">0</Z>
                   </baseVel>
                   <burstDelay dataType="Struct" type="Duality.Range">
-                    <MaxValue dataType="Float">150</MaxValue>
-                    <MinValue dataType="Float">125</MinValue>
+                    <MaxValue dataType="Float">175</MaxValue>
+                    <MinValue dataType="Float">150</MinValue>
                   </burstDelay>
                   <burstParticleNum dataType="Struct" type="Duality.Range">
                     <MaxValue dataType="Float">1</MaxValue>
@@ -800,8 +800,8 @@
                     <Z dataType="Float">0</Z>
                   </baseVel>
                   <burstDelay dataType="Struct" type="Duality.Range">
-                    <MaxValue dataType="Float">150</MaxValue>
-                    <MinValue dataType="Float">125</MinValue>
+                    <MaxValue dataType="Float">175</MaxValue>
+                    <MinValue dataType="Float">150</MinValue>
                   </burstDelay>
                   <burstParticleNum dataType="Struct" type="Duality.Range">
                     <MaxValue dataType="Float">1</MaxValue>
@@ -974,6 +974,270 @@
       </identifier>
       <initState dataType="Enum" type="Duality.InitState" name="Initialized" value="1" />
       <name dataType="String">ghost_bg</name>
+      <parent />
+      <prefabLink />
+    </item>
+    <item dataType="Struct" type="Duality.GameObject" id="1256631659">
+      <active dataType="Bool">true</active>
+      <children />
+      <compList dataType="Struct" type="System.Collections.Generic.List`1[[Duality.Component]]" id="4213439769">
+        <_items dataType="Array" type="Duality.Component[]" id="1149661518" length="4">
+          <item dataType="Struct" type="Duality.Components.Transform" id="3616946591">
+            <active dataType="Bool">true</active>
+            <angle dataType="Float">0</angle>
+            <angleAbs dataType="Float">0</angleAbs>
+            <angleVel dataType="Float">0</angleVel>
+            <angleVelAbs dataType="Float">0</angleVelAbs>
+            <deriveAngle dataType="Bool">true</deriveAngle>
+            <gameobj dataType="ObjectRef">1256631659</gameobj>
+            <ignoreParent dataType="Bool">false</ignoreParent>
+            <parentTransform />
+            <pos dataType="Struct" type="Duality.Vector3">
+              <X dataType="Float">2500</X>
+              <Y dataType="Float">-500</Y>
+              <Z dataType="Float">0</Z>
+            </pos>
+            <posAbs dataType="Struct" type="Duality.Vector3">
+              <X dataType="Float">2500</X>
+              <Y dataType="Float">-500</Y>
+              <Z dataType="Float">0</Z>
+            </posAbs>
+            <scale dataType="Float">1</scale>
+            <scaleAbs dataType="Float">1</scaleAbs>
+            <vel dataType="Struct" type="Duality.Vector3" />
+            <velAbs dataType="Struct" type="Duality.Vector3" />
+          </item>
+          <item dataType="Struct" type="ParticleSystem.ParticleEffect" id="1226261689">
+            <active dataType="Bool">true</active>
+            <angularDrag dataType="Float">0</angularDrag>
+            <brightnessByDepth dataType="Float">1</brightnessByDepth>
+            <constantForce dataType="Struct" type="Duality.Vector3" />
+            <emitters dataType="Struct" type="System.Collections.Generic.List`1[[ParticleSystem.ParticleEmitter]]" id="1166644041">
+              <_items dataType="Array" type="ParticleSystem.ParticleEmitter[]" id="3212016526" length="4">
+                <item dataType="Struct" type="ParticleSystem.ParticleEmitter" id="715478224">
+                  <basePos dataType="Struct" type="Duality.Vector3" />
+                  <baseVel dataType="Struct" type="Duality.Vector3">
+                    <X dataType="Float">-7</X>
+                    <Y dataType="Float">0</Y>
+                    <Z dataType="Float">0</Z>
+                  </baseVel>
+                  <burstDelay dataType="Struct" type="Duality.Range">
+                    <MaxValue dataType="Float">350</MaxValue>
+                    <MinValue dataType="Float">200</MinValue>
+                  </burstDelay>
+                  <burstParticleNum dataType="Struct" type="Duality.Range">
+                    <MaxValue dataType="Float">1</MaxValue>
+                    <MinValue dataType="Float">1</MinValue>
+                  </burstParticleNum>
+                  <depthMult dataType="Float">1</depthMult>
+                  <maxBurstCount dataType="Int">-1</maxBurstCount>
+                  <maxColor dataType="Struct" type="Duality.Drawing.ColorHsva">
+                    <A dataType="Float">0.7607843</A>
+                    <H dataType="Float">0</H>
+                    <S dataType="Float">0</S>
+                    <V dataType="Float">1</V>
+                  </maxColor>
+                  <minColor dataType="Struct" type="Duality.Drawing.ColorHsva">
+                    <A dataType="Float">0.329411775</A>
+                    <H dataType="Float">0</H>
+                    <S dataType="Float">0</S>
+                    <V dataType="Float">1</V>
+                  </minColor>
+                  <particleLifetime dataType="Struct" type="Duality.Range">
+                    <MaxValue dataType="Float">25000</MaxValue>
+                    <MinValue dataType="Float">20000</MinValue>
+                  </particleLifetime>
+                  <randomAngle dataType="Struct" type="Duality.Range" />
+                  <randomAngleVel dataType="Struct" type="Duality.Range" />
+                  <randomPos dataType="Struct" type="Duality.Range">
+                    <MaxValue dataType="Float">600</MaxValue>
+                    <MinValue dataType="Float">0</MinValue>
+                  </randomPos>
+                  <randomVel dataType="Struct" type="Duality.Range">
+                    <MaxValue dataType="Float">1</MaxValue>
+                    <MinValue dataType="Float">1</MinValue>
+                  </randomVel>
+                  <spriteIndex dataType="Struct" type="Duality.Range">
+                    <MaxValue dataType="Float">3</MaxValue>
+                    <MinValue dataType="Float">0</MinValue>
+                  </spriteIndex>
+                </item>
+              </_items>
+              <_size dataType="Int">1</_size>
+              <_version dataType="Int">4</_version>
+            </emitters>
+            <fadeInAt dataType="Float">0</fadeInAt>
+            <fadeOutAt dataType="Float">0.75</fadeOutAt>
+            <gameobj dataType="ObjectRef">1256631659</gameobj>
+            <linearDrag dataType="Float">0</linearDrag>
+            <material dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Material]]">
+              <contentPath dataType="String">Data\Graphics\ghost_clouds2x2.Material.res</contentPath>
+            </material>
+            <particleSize dataType="Struct" type="Duality.Vector2">
+              <X dataType="Float">700</X>
+              <Y dataType="Float">700</Y>
+            </particleSize>
+            <visibilityGroup dataType="Enum" type="Duality.Drawing.VisibilityFlag" name="Group0" value="1" />
+            <warmStartingTime dataType="Float">10</warmStartingTime>
+          </item>
+        </_items>
+        <_size dataType="Int">2</_size>
+        <_version dataType="Int">2</_version>
+      </compList>
+      <compMap dataType="Struct" type="System.Collections.Generic.Dictionary`2[[System.Type],[Duality.Component]]" id="1656504192" surrogate="true">
+        <header />
+        <body>
+          <keys dataType="Array" type="System.Object[]" id="2034372659">
+            <item dataType="ObjectRef">2709743630</item>
+            <item dataType="ObjectRef">427903676</item>
+          </keys>
+          <values dataType="Array" type="System.Object[]" id="3632662712">
+            <item dataType="ObjectRef">3616946591</item>
+            <item dataType="ObjectRef">1226261689</item>
+          </values>
+        </body>
+      </compMap>
+      <compTransform dataType="ObjectRef">3616946591</compTransform>
+      <identifier dataType="Struct" type="System.Guid" surrogate="true">
+        <header>
+          <data dataType="Array" type="System.Byte[]" id="1111003737">8+F3w5F5/0y6avD0hVqQZw==</data>
+        </header>
+        <body />
+      </identifier>
+      <initState dataType="Enum" type="Duality.InitState" name="Initialized" value="1" />
+      <name dataType="String">CloudParticles</name>
+      <parent />
+      <prefabLink />
+    </item>
+    <item dataType="Struct" type="Duality.GameObject" id="244550815">
+      <active dataType="Bool">true</active>
+      <children />
+      <compList dataType="Struct" type="System.Collections.Generic.List`1[[Duality.Component]]" id="116074333">
+        <_items dataType="Array" type="Duality.Component[]" id="1628386662" length="4">
+          <item dataType="Struct" type="Duality.Components.Transform" id="2604865747">
+            <active dataType="Bool">true</active>
+            <angle dataType="Float">0</angle>
+            <angleAbs dataType="Float">0</angleAbs>
+            <angleVel dataType="Float">0</angleVel>
+            <angleVelAbs dataType="Float">0</angleVelAbs>
+            <deriveAngle dataType="Bool">true</deriveAngle>
+            <gameobj dataType="ObjectRef">244550815</gameobj>
+            <ignoreParent dataType="Bool">false</ignoreParent>
+            <parentTransform />
+            <pos dataType="Struct" type="Duality.Vector3">
+              <X dataType="Float">2500</X>
+              <Y dataType="Float">500</Y>
+              <Z dataType="Float">0</Z>
+            </pos>
+            <posAbs dataType="Struct" type="Duality.Vector3">
+              <X dataType="Float">2500</X>
+              <Y dataType="Float">500</Y>
+              <Z dataType="Float">0</Z>
+            </posAbs>
+            <scale dataType="Float">1</scale>
+            <scaleAbs dataType="Float">1</scaleAbs>
+            <vel dataType="Struct" type="Duality.Vector3" />
+            <velAbs dataType="Struct" type="Duality.Vector3" />
+          </item>
+          <item dataType="Struct" type="ParticleSystem.ParticleEffect" id="214180845">
+            <active dataType="Bool">true</active>
+            <angularDrag dataType="Float">0</angularDrag>
+            <brightnessByDepth dataType="Float">1</brightnessByDepth>
+            <constantForce dataType="Struct" type="Duality.Vector3" />
+            <emitters dataType="Struct" type="System.Collections.Generic.List`1[[ParticleSystem.ParticleEmitter]]" id="376548061">
+              <_items dataType="Array" type="ParticleSystem.ParticleEmitter[]" id="2235715686" length="4">
+                <item dataType="Struct" type="ParticleSystem.ParticleEmitter" id="2017548160">
+                  <basePos dataType="Struct" type="Duality.Vector3" />
+                  <baseVel dataType="Struct" type="Duality.Vector3">
+                    <X dataType="Float">-7</X>
+                    <Y dataType="Float">0</Y>
+                    <Z dataType="Float">0</Z>
+                  </baseVel>
+                  <burstDelay dataType="Struct" type="Duality.Range">
+                    <MaxValue dataType="Float">350</MaxValue>
+                    <MinValue dataType="Float">200</MinValue>
+                  </burstDelay>
+                  <burstParticleNum dataType="Struct" type="Duality.Range">
+                    <MaxValue dataType="Float">1</MaxValue>
+                    <MinValue dataType="Float">1</MinValue>
+                  </burstParticleNum>
+                  <depthMult dataType="Float">1</depthMult>
+                  <maxBurstCount dataType="Int">-1</maxBurstCount>
+                  <maxColor dataType="Struct" type="Duality.Drawing.ColorHsva">
+                    <A dataType="Float">0.7607843</A>
+                    <H dataType="Float">0</H>
+                    <S dataType="Float">0</S>
+                    <V dataType="Float">1</V>
+                  </maxColor>
+                  <minColor dataType="Struct" type="Duality.Drawing.ColorHsva">
+                    <A dataType="Float">0.329411775</A>
+                    <H dataType="Float">0</H>
+                    <S dataType="Float">0</S>
+                    <V dataType="Float">1</V>
+                  </minColor>
+                  <particleLifetime dataType="Struct" type="Duality.Range">
+                    <MaxValue dataType="Float">25000</MaxValue>
+                    <MinValue dataType="Float">20000</MinValue>
+                  </particleLifetime>
+                  <randomAngle dataType="Struct" type="Duality.Range" />
+                  <randomAngleVel dataType="Struct" type="Duality.Range" />
+                  <randomPos dataType="Struct" type="Duality.Range">
+                    <MaxValue dataType="Float">600</MaxValue>
+                    <MinValue dataType="Float">0</MinValue>
+                  </randomPos>
+                  <randomVel dataType="Struct" type="Duality.Range">
+                    <MaxValue dataType="Float">1</MaxValue>
+                    <MinValue dataType="Float">1</MinValue>
+                  </randomVel>
+                  <spriteIndex dataType="Struct" type="Duality.Range">
+                    <MaxValue dataType="Float">3</MaxValue>
+                    <MinValue dataType="Float">0</MinValue>
+                  </spriteIndex>
+                </item>
+              </_items>
+              <_size dataType="Int">1</_size>
+              <_version dataType="Int">4</_version>
+            </emitters>
+            <fadeInAt dataType="Float">0</fadeInAt>
+            <fadeOutAt dataType="Float">0.75</fadeOutAt>
+            <gameobj dataType="ObjectRef">244550815</gameobj>
+            <linearDrag dataType="Float">0</linearDrag>
+            <material dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Material]]">
+              <contentPath dataType="String">Data\Graphics\ghost_clouds2x2.Material.res</contentPath>
+            </material>
+            <particleSize dataType="Struct" type="Duality.Vector2">
+              <X dataType="Float">700</X>
+              <Y dataType="Float">700</Y>
+            </particleSize>
+            <visibilityGroup dataType="Enum" type="Duality.Drawing.VisibilityFlag" name="Group0" value="1" />
+            <warmStartingTime dataType="Float">10</warmStartingTime>
+          </item>
+        </_items>
+        <_size dataType="Int">2</_size>
+        <_version dataType="Int">2</_version>
+      </compList>
+      <compMap dataType="Struct" type="System.Collections.Generic.Dictionary`2[[System.Type],[Duality.Component]]" id="1899430264" surrogate="true">
+        <header />
+        <body>
+          <keys dataType="Array" type="System.Object[]" id="3381566519">
+            <item dataType="ObjectRef">2709743630</item>
+            <item dataType="ObjectRef">427903676</item>
+          </keys>
+          <values dataType="Array" type="System.Object[]" id="291073600">
+            <item dataType="ObjectRef">2604865747</item>
+            <item dataType="ObjectRef">214180845</item>
+          </values>
+        </body>
+      </compMap>
+      <compTransform dataType="ObjectRef">2604865747</compTransform>
+      <identifier dataType="Struct" type="System.Guid" surrogate="true">
+        <header>
+          <data dataType="Array" type="System.Byte[]" id="629855765">+s8NmZ4UaEO3bIPsPxSlDQ==</data>
+        </header>
+        <body />
+      </identifier>
+      <initState dataType="Enum" type="Duality.InitState" name="Initialized" value="1" />
+      <name dataType="String">CloudParticles</name>
       <parent />
       <prefabLink />
     </item>
