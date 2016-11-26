@@ -58,14 +58,14 @@ namespace Game
 			{
 				this.targetFade = 0.0f;
 				this.targetFadeColor = ColorRgba.Black;
-				if (this.fadeValue <= 0.001f)
+				if (this.fadeValue <= 0.005f)
 					Scene.SwitchTo(this.player.LoseScene);
 			}
 			else if (this.player.GameWon)
 			{
 				this.targetFade = 0.0f;
 				this.targetFadeColor = ColorRgba.White;
-				if (this.fadeValue <= 0.001f)
+				if (this.fadeValue <= 0.005f)
 					Scene.SwitchTo(this.player.WinScene);
 			}
 		}
