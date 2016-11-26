@@ -557,7 +557,10 @@
                     <MaxValue dataType="Float">1</MaxValue>
                     <MinValue dataType="Float">1</MinValue>
                   </randomVel>
-                  <spriteIndex dataType="Struct" type="Duality.Range" />
+                  <spriteIndex dataType="Struct" type="Duality.Range">
+                    <MaxValue dataType="Float">3</MaxValue>
+                    <MinValue dataType="Float">0</MinValue>
+                  </spriteIndex>
                 </item>
               </_items>
               <_size dataType="Int">1</_size>
@@ -568,7 +571,7 @@
             <gameobj dataType="ObjectRef">3459665364</gameobj>
             <linearDrag dataType="Float">0</linearDrag>
             <material dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Material]]">
-              <contentPath dataType="String">Default:Material:DualityIcon</contentPath>
+              <contentPath dataType="String">Data\Graphics\Ghost_leaves.Material.res</contentPath>
             </material>
             <particleSize dataType="Struct" type="Duality.Vector2">
               <X dataType="Float">16</X>
@@ -691,7 +694,10 @@
                     <MaxValue dataType="Float">1</MaxValue>
                     <MinValue dataType="Float">1</MinValue>
                   </randomVel>
-                  <spriteIndex dataType="Struct" type="Duality.Range" />
+                  <spriteIndex dataType="Struct" type="Duality.Range">
+                    <MaxValue dataType="Float">3</MaxValue>
+                    <MinValue dataType="Float">0</MinValue>
+                  </spriteIndex>
                 </item>
               </_items>
               <_size dataType="Int">1</_size>
@@ -702,7 +708,7 @@
             <gameobj dataType="ObjectRef">2160168034</gameobj>
             <linearDrag dataType="Float">0</linearDrag>
             <material dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Material]]">
-              <contentPath dataType="String">Default:Material:DualityIcon</contentPath>
+              <contentPath dataType="String">Data\Graphics\Ghost_leaves.Material.res</contentPath>
             </material>
             <particleSize dataType="Struct" type="Duality.Vector2">
               <X dataType="Float">16</X>
@@ -825,7 +831,10 @@
                     <MaxValue dataType="Float">1</MaxValue>
                     <MinValue dataType="Float">1</MinValue>
                   </randomVel>
-                  <spriteIndex dataType="Struct" type="Duality.Range" />
+                  <spriteIndex dataType="Struct" type="Duality.Range">
+                    <MaxValue dataType="Float">3</MaxValue>
+                    <MinValue dataType="Float">0</MinValue>
+                  </spriteIndex>
                 </item>
               </_items>
               <_size dataType="Int">1</_size>
@@ -836,7 +845,7 @@
             <gameobj dataType="ObjectRef">2841004615</gameobj>
             <linearDrag dataType="Float">0</linearDrag>
             <material dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Material]]">
-              <contentPath dataType="String">Default:Material:DualityIcon</contentPath>
+              <contentPath dataType="String">Data\Graphics\Ghost_leaves.Material.res</contentPath>
             </material>
             <particleSize dataType="Struct" type="Duality.Vector2">
               <X dataType="Float">16</X>
