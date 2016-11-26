@@ -256,7 +256,28 @@
             <gameobj dataType="ObjectRef">4128596796</gameobj>
             <memoryImages dataType="Array" type="Duality.ContentRef`1[[Duality.Resources.Texture]][]" id="1008149199">
               <item dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Texture]]">
+                <contentPath dataType="String">Data\Graphics\Memories\Oma1.Texture.res</contentPath>
+              </item>
+              <item dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Texture]]">
+                <contentPath dataType="String">Data\Graphics\Memories\Oma2.Texture.res</contentPath>
+              </item>
+              <item dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Texture]]">
+                <contentPath dataType="String">Data\Graphics\Memories\Oma3.Texture.res</contentPath>
+              </item>
+              <item dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Texture]]">
+                <contentPath dataType="String">Data\Graphics\Memories\Oma4.Texture.res</contentPath>
+              </item>
+              <item dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Texture]]">
+                <contentPath dataType="String">Data\Graphics\Memories\Oma5.Texture.res</contentPath>
+              </item>
+              <item dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Texture]]">
+                <contentPath dataType="String">Data\Graphics\Memories\Oma6.Texture.res</contentPath>
+              </item>
+              <item dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Texture]]">
                 <contentPath dataType="String">Data\Graphics\Memories\Oma7.Texture.res</contentPath>
+              </item>
+              <item dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Texture]]">
+                <contentPath dataType="String">Data\Graphics\Memories\Oma8.Texture.res</contentPath>
               </item>
             </memoryImages>
             <memoryObject dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Prefab]]">

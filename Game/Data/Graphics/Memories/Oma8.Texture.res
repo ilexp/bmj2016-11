@@ -2,7 +2,7 @@
   <anisoFilter dataType="Bool">false</anisoFilter>
   <assetInfo />
   <basePixmap dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Pixmap]]">
-    <contentPath dataType="String">Data\Graphics\Memories\Oma7.Pixmap.res</contentPath>
+    <contentPath dataType="String">Data\Graphics\Memories\Oma8.Pixmap.res</contentPath>
   </basePixmap>
   <filterMag dataType="Enum" type="Duality.Drawing.TextureMagFilter" name="Linear" value="1" />
   <filterMin dataType="Enum" type="Duality.Drawing.TextureMinFilter" name="LinearMipmapLinear" value="5" />
