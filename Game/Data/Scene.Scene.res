@@ -182,9 +182,7 @@
               <contentPath dataType="String">Data\LoseScene.Scene.res</contentPath>
             </loseScene>
             <memoryCount dataType="Int">0</memoryCount>
-            <music dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Sound]]">
-              <contentPath dataType="String">Data\Audio\Background.Sound.res</contentPath>
-            </music>
+            <music dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Sound]]" />
             <musicInstance />
             <verticalSpeed dataType="Float">3</verticalSpeed>
             <winScene dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Scene]]">
